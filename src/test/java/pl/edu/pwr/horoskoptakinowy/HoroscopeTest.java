@@ -26,7 +26,16 @@ public class HoroscopeTest {
 	public void shoudReturn4thHealthProphecyForJoannaSkurzynska() {
 		// given
 		String nameSurname = "Joanna Skurzynska";
-		// nazwiska przez 12
+		// when
+		int healthIndex = horoscope.getHealthIndexProphecy(nameSurname);
+		// then
+		assertThat(healthIndex, is(equalTo(4)));
+	}
+	
+	@Test
+	public void shoudReturn4thHealthProphecyForJoannaSkurzynskaMultipleSpaces() {
+		// given
+		String nameSurname = "Joanna     Skurzynska";
 		// when
 		int healthIndex = horoscope.getHealthIndexProphecy(nameSurname);
 		// then
@@ -37,7 +46,6 @@ public class HoroscopeTest {
 	public void shoudReturn0thLoveProphecyFor13thDay() {
 		// given
 		LocalDate date = LocalDate.of(2014, Month.DECEMBER, 13);
-		// nazwiska przez 12
 		// when
 		int loveIndex = horoscope.getLoveIndexProphecy(date);
 		// then
@@ -48,7 +56,6 @@ public class HoroscopeTest {
 	public void shoudReturn5thWorkProphecyFor5() {
 		// given
 		int random = 5;
-		// nazwiska przez 12
 		// when
 		int workIndex = horoscope.getWorkIndexProphecy(random);
 		// then

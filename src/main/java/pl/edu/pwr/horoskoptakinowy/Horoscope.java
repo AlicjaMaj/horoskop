@@ -6,7 +6,7 @@ import java.util.Random;
 public class Horoscope {
 
 	public int getHealthIndexProphecy(String nameSurname) {
-		return nameSurname.replace(" ", "").length() % 12;
+		return nameSurname.replaceAll(" ", "").length() % 12;
 	}
 
 	public int getLoveIndexProphecy(LocalDate date) {
